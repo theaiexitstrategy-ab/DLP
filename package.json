@@ -1,0 +1,9 @@
+{
+  "name": "daniels-legacy-planning",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing site for Daniels' Legacy Planning (www.danielslegacyplanning.com)",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  }
+}

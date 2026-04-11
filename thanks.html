@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Daniels' Legacy Planning</title>
+<meta name="description" content="Your quote request has been received. A Daniels' Legacy Planning advisor will reach out within 24 hours.">
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --navy-deep: #0f1a30;
+    --gold: #c9a84c;
+    --gold-light: #e8d08a;
+    --green: #2d6a2d;
+    --white: #ffffff;
+    --off-white: #f8f6f0;
+    --gray: #6b7280;
+    --light-gray: #f3f4f6;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(150deg, var(--navy-deep) 0%, #1e2f55 55%, #243566 100%);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* subtle gold-weave texture */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
+    background-size: 28px 28px;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 0;
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0;
+    background: radial-gradient(ellipse at 75% 30%, rgba(201,168,76,0.12) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(15,26,48,0.97);
+    backdrop-filter: blur(10px);
+    padding: 14px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .nav-brand {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+  }
+  .nav-brand span { color: var(--white); font-weight: 400; }
+  .nav-home {
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-home:hover { color: var(--gold); }
+
+  /* MAIN */
+  .thanks-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .thanks-card {
+    max-width: 620px;
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 20px;
+    padding: 60px 48px 54px;
+    text-align: center;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    animation: fadeUp 0.7s ease forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .check-circle {
+    width: 88px; height: 88px;
+    margin: 0 auto 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold) 0%, #e8c05a 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 44px; font-weight: 900;
+    color: var(--navy-deep);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.4);
+    animation: pop 0.6s 0.15s ease backwards;
+  }
+  @keyframes pop {
+    from { opacity: 0; transform: scale(0.6); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+  .thanks-card h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 18px;
+    color: var(--white);
+  }
+  .thanks-card h1 em { color: var(--gold); font-style: italic; }
+  .lead-line {
+    font-size: clamp(1rem, 1.4vw, 1.1rem);
+    color: rgba(255,255,255,0.78);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .lead-line strong { color: var(--white); font-weight: 700; }
+
+  .next-steps {
+    text-align: left;
+    background: rgba(15,26,48,0.5);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin: 0 auto 32px;
+    max-width: 480px;
+  }
+  .next-steps h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    margin-bottom: 14px;
+    letter-spacing: 0.5px;
+  }
+  .next-steps ol {
+    list-style: none;
+    counter-reset: step;
+  }
+  .next-steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 36px;
+    padding-bottom: 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.72);
+    line-height: 1.55;
+  }
+  .next-steps li:last-child { padding-bottom: 0; }
+  .next-steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0; top: -2px;
+    width: 24px; height: 24px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+  }
+  .next-steps li strong { color: var(--white); font-weight: 700; }
+
+  .portal-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--gold) 0%, #e8c05a 100%);
+    color: var(--navy-deep);
+    font-weight: 900;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 18px 44px;
+    border-radius: 4px;
+    text-decoration: none;
+    box-shadow: 0 8px 32px rgba(201,168,76,0.35);
+    transition: all 0.3s;
+    margin-bottom: 14px;
+  }
+  .portal-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(201,168,76,0.5);
+  }
+
+  .cta-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 4px;
+  }
+
+  .divider {
+    display: flex; align-items: center; gap: 14px;
+    margin: 32px auto 22px;
+    max-width: 280px;
+    color: rgba(255,255,255,0.25);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1; height: 1px;
+    background: rgba(255,255,255,0.15);
+  }
+
+  .secondary-links {
+    display: flex; gap: 28px; justify-content: center; flex-wrap: wrap;
+    margin-top: 6px;
+  }
+  .secondary-links a {
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .secondary-links a:hover { color: var(--gold); }
+
+  /* FOOTER */
+  footer {
+    position: relative;
+    z-index: 1;
+    padding: 28px 20px;
+    text-align: center;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.5px;
+    border-top: 1px solid rgba(201,168,76,0.1);
+  }
+  footer strong { color: var(--gold); font-weight: 700; }
+
+  @media (max-width: 600px) {
+    .nav { padding: 12px 20px; }
+    .thanks-card { padding: 44px 26px 40px; border-radius: 14px; }
+    .next-steps { padding: 20px 18px; }
+    .secondary-links { gap: 18px; }
+  }
+</style>
+
+<script>
+  // Runtime config mirrors index.html. Safe to hardcode anon key: it is
+  // Supabase's public-facing key and is protected by RLS.
+  window.DLP_CONFIG = {
+    SUPABASE_URL: "https://bnkoqybkmwtrlorhowyv.supabase.co",
+    SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJua29xeWJrbXd0cmxvcmhvd3l2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MzUzODIsImV4cCI6MjA5MTAxMTM4Mn0.9_zS120_HF89HR4u_u48UOT2wgHKVHPg1W4sg4_h1mU",
+    CLIENT_ID: "28151249-7f0d-4544-8b2f-dd1b2ed1ec70",
+    PORTAL_URL: "https://portal.goelev8.ai"
+  };
+</script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-brand">Daniels' <span>Legacy Planning</span></a>
+  <a href="index.html" class="nav-home">← Back Home</a>
+</nav>
+
+<main class="thanks-wrap">
+  <div class="thanks-card">
+    <div class="check-circle">✓</div>
+
+    <div class="eyebrow">Submission Received</div>
+    <h1>Thank You, <em id="firstNameTarget">Friend</em>.</h1>
+    <p class="lead-line">
+      Your quote request has been received and <strong>a licensed DLP advisor
+      will personally reach out within 24 hours</strong> at your preferred
+      call time. Your family's future is in good hands.
+    </p>
+
+    <div class="next-steps">
+      <h3>What Happens Next</h3>
+      <ol>
+        <li><strong>Confirmation message</strong> — you'll get a text shortly confirming we received your request.</li>
+        <li><strong>A real advisor calls you</strong> — no call centers, no bots, no pressure. Just a conversation.</li>
+        <li><strong>You get matched</strong> to coverage from top-rated carriers that actually fits your budget and goals.</li>
+      </ol>
+    </div>
+
+    <a href="https://portal.goelev8.ai"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="portal-cta"
+       id="portalCta"
+       data-portal-link
+       data-portal-label="Continue to Your Portal"
+       data-portal-section="thanks-page-primary">
+      Continue to Your Portal →
+    </a>
+    <div class="cta-sub">Track your quote, upload documents, and message your advisor.</div>
+
+    <div class="divider">OR</div>
+
+    <div class="secondary-links">
+      <a href="index.html">Return Home</a>
+      <a href="https://portal.goelev8.ai"
+         target="_blank"
+         rel="noopener noreferrer"
+         data-portal-link
+         data-portal-label="Log In"
+         data-portal-section="thanks-page-secondary">
+        Existing Client? Log In
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <strong>Daniels' Legacy Planning</strong> · Licensed in Missouri &amp; Oklahoma · © 2026 All rights reserved.
+</footer>
+
+<script>
+  // ---------------------------------------------------------------
+  // Personalize greeting from the sessionStorage payload set by
+  // index.html's submitForm() right before navigating here.
+  // ---------------------------------------------------------------
+  (function () {
+    try {
+      const raw = sessionStorage.getItem('dlp_lead');
+      if (raw) {
+        const lead = JSON.parse(raw);
+        const first = (lead.firstName || '').trim();
+        if (first) {
+          document.getElementById('firstNameTarget').textContent = first;
+        }
+      }
+    } catch (e) { /* no-op */ }
+  })();
+
+  // ---------------------------------------------------------------
+  // Portal click tracking — mirrors index.html. Uses fetch with
+  // Prefer: return=minimal so the insert isn't blocked by the
+  // authenticated-only SELECT policy.
+  // ---------------------------------------------------------------
+  const DLP_CFG = window.DLP_CONFIG || {};
+  const SB_URL = DLP_CFG.SUPABASE_URL || "";
+  const SB_KEY = DLP_CFG.SUPABASE_ANON_KEY || "";
+  const CLIENT_ID = DLP_CFG.CLIENT_ID || "";
+
+  function trackPortalClick(label, section) {
+    if (!SB_URL || !SB_KEY) return;
+    try {
+      fetch(SB_URL + "/rest/v1/portal_clicks", {
+        method: "POST",
+        headers: {
+          "apikey": SB_KEY,
+          "Authorization": "Bearer " + SB_KEY,
+          "Content-Type": "application/json",
+          "Prefer": "return=minimal"
+        },
+        body: JSON.stringify({
+          client_id: CLIENT_ID,
+          button_label: label || null,
+          page_section: section || null,
+          referrer: document.referrer || null,
+          user_agent: navigator.userAgent || null
+        }),
+        keepalive: true
+      }).catch(function (err) {
+        console.warn("[dlp] portal_clicks insert failed:", err);
+      });
+    } catch (err) {
+      console.warn("[dlp] trackPortalClick failed:", err);
+    }
+  }
+
+  // Wire all data-portal-link elements on this page
+  document.querySelectorAll("[data-portal-link]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      trackPortalClick(
+        el.getAttribute("data-portal-label") || el.textContent.trim(),
+        el.getAttribute("data-portal-section") || "thanks-page"
+      );
+    });
+  });
+
+  // Fire a "thanks-page-view" portal_click record on load so you can
+  // count how many submissions actually landed on this page. Uses
+  // the portal_clicks table with a distinct label.
+  trackPortalClick("Thanks Page View", "thanks-page-load");
+</script>
+
+</body>
+</html>
