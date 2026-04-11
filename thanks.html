@@ -259,11 +259,83 @@
   }
   footer strong { color: var(--gold); font-weight: 700; }
 
+  /* BOOKING CALENDAR */
+  .booking-wrap {
+    max-width: 960px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .booking-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 42px 36px 32px;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.4);
+    border: 1px solid rgba(201,168,76,0.3);
+  }
+  .booking-header {
+    text-align: center;
+    margin-bottom: 24px;
+    color: var(--navy);
+  }
+  .booking-header .eyebrow { color: var(--gold); }
+  .booking-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    color: var(--navy);
+    margin: 10px 0 8px;
+    line-height: 1.2;
+  }
+  .booking-header p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .calendly-inline-widget {
+    min-width: 320px;
+    width: 100%;
+    height: 720px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .calendar-fallback {
+    padding: 40px 24px;
+    text-align: center;
+    color: var(--navy);
+    background: var(--off-white);
+    border: 1px dashed rgba(26,39,68,0.2);
+    border-radius: 10px;
+  }
+  .calendar-fallback h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .calendar-fallback p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .calendar-fallback .phone-big {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+    text-decoration: none;
+  }
+
   @media (max-width: 600px) {
     .nav { padding: 12px 20px; }
     .thanks-card { padding: 44px 26px 40px; border-radius: 14px; }
     .next-steps { padding: 20px 18px; }
     .secondary-links { gap: 18px; }
+    .booking-card { padding: 28px 18px 24px; border-radius: 14px; }
+    .calendly-inline-widget { height: 900px; }
   }
 </style>
 
@@ -274,9 +346,19 @@
     SUPABASE_URL: "https://bnkoqybkmwtrlorhowyv.supabase.co",
     SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJua29xeWJrbXd0cmxvcmhvd3l2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MzUzODIsImV4cCI6MjA5MTAxMTM4Mn0.9_zS120_HF89HR4u_u48UOT2wgHKVHPg1W4sg4_h1mU",
     CLIENT_ID: "28151249-7f0d-4544-8b2f-dd1b2ed1ec70",
-    PORTAL_URL: "https://portal.goelev8.ai"
+    PORTAL_URL: "https://portal.goelev8.ai",
+    // CHANGE ME: DLP booking calendar URL.
+    // Currently set to a placeholder Calendly URL. Swap this for the real
+    // DLP scheduling link (Calendly / Acuity / Google / Cal.com all work —
+    // if you move off Calendly, also replace the embed <script> at the
+    // bottom of this file and the .calendly-inline-widget element below).
+    BOOKING_URL: "https://calendly.com/daniels-legacy-planning/consultation",
+    BOOKING_PHONE: "+1-555-000-0000"
   };
 </script>
+
+<!-- Calendly inline embed (only loads once the page renders) -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
 
@@ -306,17 +388,15 @@
       </ol>
     </div>
 
-    <a href="https://portal.goelev8.ai"
-       target="_blank"
-       rel="noopener noreferrer"
+    <a href="#book"
        class="portal-cta"
-       id="portalCta"
+       id="scrollToBook"
        data-portal-link
-       data-portal-label="Continue to Your Portal"
+       data-portal-label="Scroll to Book Consultation"
        data-portal-section="thanks-page-primary">
-      Continue to Your Portal →
+      Book My Consultation ↓
     </a>
-    <div class="cta-sub">Track your quote, upload documents, and message your advisor.</div>
+    <div class="cta-sub">Pick a time below that works for you — takes 15 minutes.</div>
 
     <div class="divider">OR</div>
 
@@ -326,13 +406,35 @@
          target="_blank"
          rel="noopener noreferrer"
          data-portal-link
-         data-portal-label="Log In"
+         data-portal-label="Existing Client Log In"
          data-portal-section="thanks-page-secondary">
         Existing Client? Log In
       </a>
     </div>
   </div>
 </main>
+
+<section class="booking-wrap" id="book">
+  <div class="booking-card">
+    <div class="booking-header">
+      <div class="eyebrow">Step 2 · Book Your Consultation</div>
+      <h2>Pick a Time That Works for You</h2>
+      <p>Choose a 15-minute slot with a licensed DLP advisor. No pressure, no sales pitch — just answers about your coverage options.</p>
+    </div>
+
+    <!-- Calendly inline widget — rendered only if BOOKING_URL is a real Calendly URL.
+         If you switch to Acuity / Cal.com / Google, replace this block with that
+         provider's embed code and update the init script at the bottom of the file. -->
+    <div class="calendly-inline-widget" id="dlpCalendar"></div>
+
+    <!-- Fallback shown when BOOKING_URL isn't set or the widget can't load -->
+    <div class="calendar-fallback" id="calendarFallback" style="display:none;">
+      <h3>Prefer to Talk Now?</h3>
+      <p>Give us a call and a DLP advisor will help you pick a time in under 60 seconds.</p>
+      <a class="phone-big" id="fallbackPhoneLink" href="tel:+15550000000">Call DLP →</a>
+    </div>
+  </div>
+</section>
 
 <footer>
   <strong>Daniels' Legacy Planning</strong> · Licensed in Missouri &amp; Oklahoma · © 2026 All rights reserved.
@@ -393,13 +495,21 @@
     }
   }
 
-  // Wire all data-portal-link elements on this page
+  // Wire all data-portal-link elements on this page. The primary gold
+  // CTA on this page is an in-page anchor (#book) that smooth-scrolls to
+  // the Calendly widget; we intercept its click to scroll + track.
   document.querySelectorAll("[data-portal-link]").forEach(function (el) {
-    el.addEventListener("click", function () {
+    el.addEventListener("click", function (e) {
       trackPortalClick(
         el.getAttribute("data-portal-label") || el.textContent.trim(),
         el.getAttribute("data-portal-section") || "thanks-page"
       );
+      const href = el.getAttribute("href") || "";
+      if (href.startsWith("#")) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
     });
   });
 
@@ -407,6 +517,90 @@
   // count how many submissions actually landed on this page. Uses
   // the portal_clicks table with a distinct label.
   trackPortalClick("Thanks Page View", "thanks-page-load");
+
+  // ---------------------------------------------------------------
+  // Booking calendar — Calendly inline widget
+  //
+  // Loads the Calendly embed script and initializes it against the
+  // configured BOOKING_URL. If no BOOKING_URL is set, or if Calendly
+  // fails to load (ad blocker, etc.), we show the phone-fallback card.
+  // ---------------------------------------------------------------
+  (function () {
+    const bookingUrl = DLP_CFG.BOOKING_URL || "";
+    const fallback = document.getElementById("calendarFallback");
+    const widget = document.getElementById("dlpCalendar");
+    const fallbackLink = document.getElementById("fallbackPhoneLink");
+
+    // Wire the fallback phone link even when the widget loads — it's a
+    // safety net if someone uses screen-reader navigation.
+    if (DLP_CFG.BOOKING_PHONE) {
+      const tel = DLP_CFG.BOOKING_PHONE.replace(/[^\d+]/g, "");
+      fallbackLink.href = "tel:" + tel;
+      fallbackLink.textContent = "Call " + DLP_CFG.BOOKING_PHONE + " →";
+    }
+
+    function showFallback() {
+      if (widget) widget.style.display = "none";
+      if (fallback) fallback.style.display = "block";
+    }
+
+    if (!bookingUrl) {
+      showFallback();
+      return;
+    }
+
+    // Prefill the attendee's name + email from the sessionStorage payload
+    let prefill = {};
+    try {
+      const raw = sessionStorage.getItem("dlp_lead");
+      if (raw) {
+        const lead = JSON.parse(raw);
+        prefill = {
+          name: (lead.firstName || "") + (lead.lastName ? " " + lead.lastName : ""),
+          email: lead.email || ""
+        };
+      }
+    } catch (e) { /* no-op */ }
+
+    // Dynamically load Calendly's widget script
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    script.onload = function () {
+      try {
+        if (window.Calendly && typeof window.Calendly.initInlineWidget === "function") {
+          window.Calendly.initInlineWidget({
+            url: bookingUrl,
+            parentElement: widget,
+            prefill: prefill,
+            utm: { utmSource: "dlp-website", utmMedium: "thanks-page" }
+          });
+          trackPortalClick("Calendar Loaded", "thanks-page-calendar");
+        } else {
+          showFallback();
+        }
+      } catch (err) {
+        console.warn("[dlp] Calendly init failed:", err);
+        showFallback();
+      }
+    };
+    script.onerror = function () {
+      console.warn("[dlp] Calendly widget script failed to load");
+      showFallback();
+    };
+    document.head.appendChild(script);
+
+    // Listen for Calendly's postMessage events so we can track when a
+    // visitor actually books a time (not just loads the widget).
+    window.addEventListener("message", function (e) {
+      if (!e.data || typeof e.data !== "object") return;
+      if (typeof e.data.event !== "string") return;
+      if (e.data.event.indexOf("calendly") !== 0) return;
+      if (e.data.event === "calendly.event_scheduled") {
+        trackPortalClick("Consultation Booked", "thanks-page-booked");
+      }
+    });
+  })();
 </script>
 
 </body>
