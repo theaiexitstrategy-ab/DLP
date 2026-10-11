@@ -308,6 +308,22 @@
   @keyframes bounce { 0%,80%,100%{transform:translateY(0)} 40%{transform:translateY(-7px)} }
 
   .privacy-note { text-align:center; font-size:11px; color:var(--gray); margin-top:12px; line-height:1.6; }
+  .privacy-note a, .consent-links a { color:var(--navy); text-decoration:underline; }
+
+  /* TCPA consent block (step 4) */
+  .consent-block {
+    display:flex; gap:10px; align-items:flex-start;
+    background:var(--off-white); border:1px solid #e5e7eb; border-radius:8px;
+    padding:12px 14px; margin:4px 0 14px; text-align:left;
+  }
+  .consent-block input[type="checkbox"] {
+    flex:0 0 auto; width:18px; height:18px; margin-top:2px;
+    accent-color:var(--navy); cursor:pointer;
+  }
+  .consent-block label { font-size:11px; line-height:1.6; color:var(--gray); cursor:pointer; font-weight:400; text-transform:none; letter-spacing:0; }
+  .consent-block.error { border-color:#b91c1c; background:#fef2f2; }
+  .consent-links { font-size:11px; color:var(--gray); text-align:center; margin:-6px 0 14px; }
+  footer a { color:rgba(255,255,255,0.6); text-decoration:underline; }
 
   .success-state { text-align:center; padding:16px 0; display:none; }
   .success-state.visible { display:block; animation:fadeUp 0.5s ease; }
@@ -716,6 +732,23 @@
             <option>Anytime</option>
           </select>
         </div>
+        <!-- ============================================================
+             TCPA CONSENT — ATTORNEY REVIEW REQUIRED
+             This consent language should be reviewed by an attorney before
+             paid traffic is driven to this page. The checkbox MUST stay
+             unchecked by default. The exact text in #tcpaConsentText is
+             captured verbatim into the submitted payload (consent_text),
+             so any wording change here is automatically recorded per lead.
+             ============================================================ -->
+        <div class="consent-block" id="tcpaConsentBlock">
+          <input type="checkbox" id="tcpaConsent" name="tcpa_consent" required onchange="if (this.checked) this.parentNode.classList.remove('error')" />
+          <label for="tcpaConsent" id="tcpaConsentText">By checking this box, I agree that Daniels' Legacy Planning and its licensed agents may contact me at the number and email provided, including by calls and texts, which may use automated technology, about insurance and annuity products. Consent is not a condition of purchase. Msg &amp; data rates may apply. Reply STOP to opt out.</label>
+        </div>
+        <!-- /TCPA CONSENT -->
+        <div class="consent-links">
+          <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="terms.html" target="_blank" rel="noopener">Terms</a>
+        </div>
         <button class="btn-primary" onclick="submitForm()">🔒 Submit — Get My Free Quote</button>
         <button class="btn-back" onclick="prevStep(3)">← Back</button>
         <!-- DECISION NEEDED: If DLP will share/sell overflow leads to other licensed
@@ -820,6 +853,9 @@
     This website is for informational purposes only and does not constitute a binding insurance offer.
     Coverage is subject to underwriting approval. Daniels' Legacy Planning is licensed to sell insurance products in Missouri and Oklahoma.
     © 2025 Daniels' Legacy Planning. All rights reserved.
+  </div>
+  <div class="disclaimer">
+    <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
   </div>
 </footer>
 
@@ -1047,6 +1083,21 @@ Respond in 2-3 sentences only. Be warm and personal.` }]
     const email = document.getElementById('email').value;
     const phone = document.getElementById('phone').value;
     if (!email || !phone) { alert('Please enter your email and phone number.'); return; }
+
+    // TCPA consent is required to submit. Capture the exact text shown to
+    // the visitor plus a timestamp so each lead carries its own consent record.
+    const consentBox = document.getElementById('tcpaConsent');
+    const consentBlock = document.getElementById('tcpaConsentBlock');
+    if (!consentBox || !consentBox.checked) {
+      if (consentBlock) consentBlock.classList.add('error');
+      alert('Please check the consent box so a licensed DLP advisor can contact you.');
+      return;
+    }
+    if (consentBlock) consentBlock.classList.remove('error');
+    formData.tcpa_consent = true;
+    formData.consent_text = document.getElementById('tcpaConsentText').textContent.replace(/\s+/g, ' ').trim();
+    formData.consent_timestamp = new Date().toISOString();
+
     formData.email = email; formData.phone = phone;
     formData.callTime = document.getElementById('callTime').value;
 
@@ -1071,6 +1122,13 @@ Respond in 2-3 sentences only. Be warm and personal.` }]
             email: formData.email,
             phone: formData.phone,
             source: 'dlp-website',
+            // TCPA consent record. NOTE: capture-lead (goelev8.ai-portal repo)
+            // currently whitelists insert fields and will DROP these until it
+            // is updated to persist them — see migration
+            // supabase/migrations/20261011_leads_tcpa_consent.sql.
+            tcpa_consent: formData.tcpa_consent === true,
+            consent_text: formData.consent_text || null,
+            consent_timestamp: formData.consent_timestamp || null,
             notes: 'Coverage: ' + (formData.coverage || '-') +
                    ' | State: ' + (formData.state || '-') +
                    ' | Age: ' + (formData.age || '-') +
@@ -1109,7 +1167,12 @@ Respond in 2-3 sentences only. Be warm and personal.` }]
         budget: formData.budget || null,
         goal: formData.goal || null,
         phone: formData.phone || null,
-        callTime: formData.callTime || null
+        callTime: formData.callTime || null,
+        // Stored in the existing jsonb column, so this consent record
+        // persists today with no schema change.
+        tcpa_consent: formData.tcpa_consent === true,
+        consent_text: formData.consent_text || null,
+        consent_timestamp: formData.consent_timestamp || null
       },
       recommendation: lastRecommendation || null,
       source: 'dlp-website'
