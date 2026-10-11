@@ -372,6 +372,8 @@
   .product-icon { font-size:30px; margin-bottom:14px; }
   .product-card h4 { font-family:'Playfair Display',serif; font-size:1.05rem; color:var(--navy); margin-bottom:8px; }
   .product-card p { font-size:13px; color:var(--gray); line-height:1.7; }
+  .benefits-col > .annuity-disclosure,
+  .products-inner > .annuity-disclosure { max-width:720px; margin:28px auto 0; font-size:11px; line-height:1.6; color:var(--gray); text-align:center; }
 
   /* TESTIMONIALS */
   .testimonials { background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 100%); padding:80px 20px; }
@@ -582,14 +584,14 @@
           <div class="benefit-icon">📈</div>
           <div class="benefit-text">
             <strong>Annuities &amp; Retirement Income</strong>
-            <span>Guaranteed income strategies so your retirement savings outlast you — never the other way around.</span>
+            <span>Income options that can last a lifetime, subject to the issuing insurer's claims-paying ability.</span>
           </div>
         </li>
         <li class="benefit-item">
           <div class="benefit-icon">👨‍👩‍👧</div>
           <div class="benefit-text">
             <strong>Generational Wealth Planning</strong>
-            <span>Build wealth that transfers to your children and grandchildren — tax-efficiently and on your terms.</span>
+            <span>Strategies that may help your family receive benefits efficiently — planned for your children and grandchildren, on your terms.</span>
           </div>
         </li>
         <li class="benefit-item">
@@ -600,6 +602,7 @@
           </div>
         </li>
       </ul>
+      <p class="annuity-disclosure">Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company. Annuities may have surrender charges and other fees. DLP does not provide tax or legal advice; consult a qualified professional.</p>
     </div>
 </section>
 
@@ -801,11 +804,12 @@
     <div class="products-grid">
       <div class="product-card"><div class="product-icon">📋</div><h4>Term Life Insurance</h4><p>Affordable coverage for 10, 20, or 30 years. Perfect for young families and income protection during working years.</p></div>
       <div class="product-card"><div class="product-icon">🏦</div><h4>Whole Life Insurance</h4><p>Permanent coverage that builds cash value over time — a financial asset you can borrow against while you're alive.</p></div>
-      <div class="product-card"><div class="product-icon">📈</div><h4>Indexed Annuities</h4><p>Grow your retirement savings with market-linked returns and zero risk of loss. Guaranteed income for life.</p></div>
+      <div class="product-card"><div class="product-icon">📈</div><h4>Indexed Annuities</h4><p>Market-linked growth potential, with options designed to help protect your principal from market downturns. Income options that can last a lifetime, subject to the issuing insurer's claims-paying ability.</p></div>
       <div class="product-card"><div class="product-icon">💛</div><h4>Final Expense Plans</h4><p>Simple, affordable plans ensuring funeral and end-of-life costs never burden the people you love most.</p></div>
       <div class="product-card"><div class="product-icon">💼</div><h4>Business Protection</h4><p>Key person insurance, buy-sell agreements, and executive benefit plans to protect what you've built.</p></div>
-      <div class="product-card"><div class="product-icon">🌱</div><h4>Legacy &amp; Wealth Transfer</h4><p>Strategic planning to pass wealth to the next generation efficiently, with minimal taxes and zero delays.</p></div>
+      <div class="product-card"><div class="product-icon">🌱</div><h4>Legacy &amp; Wealth Transfer</h4><p>Planning for the next generation, with strategies that may help your family receive benefits efficiently.</p></div>
     </div>
+    <p class="annuity-disclosure">Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company. Annuities may have surrender charges and other fees. DLP does not provide tax or legal advice; consult a qualified professional.</p>
   </div>
 </section>
 
@@ -866,6 +870,7 @@
   <div class="disclaimer">
     This website is for informational purposes only and does not constitute a binding insurance offer.
     Coverage is subject to underwriting approval. Daniels' Legacy Planning is licensed to sell insurance products in Missouri and Oklahoma.
+    Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company. Annuities may have surrender charges and other fees. DLP does not provide tax or legal advice; consult a qualified professional.
     © 2025 Daniels' Legacy Planning. All rights reserved.
   </div>
   <div class="disclaimer">
@@ -1076,7 +1081,7 @@
         body: JSON.stringify({
           model: "claude-sonnet-4-20250514",
           max_tokens: 1000,
-          messages: [{ role: "user", content: `You are a warm, knowledgeable insurance advisor for Daniels' Legacy Planning — a family-owned life insurance agency in Missouri and Oklahoma. Based on this prospect's information, write a brief, warm, personalized 2-3 sentence recommendation. Be encouraging and specific. Never mention exact prices or guarantee approval.
+          messages: [{ role: "user", content: `You are a warm, knowledgeable insurance advisor for Daniels' Legacy Planning — a family-owned life insurance agency in Missouri and Oklahoma. Based on this prospect's information, write a brief, warm, personalized 2-3 sentence recommendation. Be encouraging and specific. Never mention exact prices or guarantee approval. Never promise guaranteed returns, no risk of loss, or tax savings.
 
 Prospect: Age ${formData.age}, ${formData.health} health, ${formData.state}, seeking ${formData.coverage || 'life insurance'}, coverage amount ${amount}, budget ${budget}, goal: ${goal}.
 
