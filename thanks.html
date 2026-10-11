@@ -445,7 +445,8 @@
 </section>
 
 <footer>
-  <strong>Daniels' Legacy Planning</strong> · Licensed in Missouri &amp; Oklahoma · © 2026 All rights reserved.
+  <strong>Daniels' Legacy Planning</strong> · Licensed in Missouri &amp; Oklahoma · © <span id="footerYear"></span> All rights reserved.
+  <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
 </footer>
 
 <script>

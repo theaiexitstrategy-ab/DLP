@@ -9,6 +9,58 @@
   gtag('js', new Date());
   gtag('config', 'G-BXLC9EZSYK');
 </script>
+<!-- ================================================================
+     CONVERSION TRACKING SCAFFOLDING
+     Fill in the IDs below. While an ID still starts with "TODO" its
+     tag is not loaded, so no requests go out with placeholder IDs.
+       [TODO: META_PIXEL_ID]  e.g. "123456789012345"
+       [TODO: GA4/Ads ID]     Google Ads ID, e.g. "AW-123456789".
+                              (GA4 G-BXLC9EZSYK is already configured above.)
+     Conversion events (Meta "Lead", Google "generate_lead") fire ONLY
+     from dlpTrackLeadConversion(), called after a successful form
+     submission — never on page load or click.
+     ================================================================ -->
+<script>
+  window.DLP_TRACKING = {
+    META_PIXEL_ID: "TODO_META_PIXEL_ID",
+    GOOGLE_ADS_ID: "TODO_GOOGLE_ADS_ID"
+  };
+  (function (t) {
+    function isSet(id) { return id && id.indexOf("TODO") !== 0; }
+
+    // Google Ads — reuses the gtag.js loader above
+    if (isSet(t.GOOGLE_ADS_ID)) gtag('config', t.GOOGLE_ADS_ID);
+
+    // Meta Pixel base code
+    if (isSet(t.META_PIXEL_ID)) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', t.META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+
+    // Fire lead conversions once. Resolves when Google confirms the hit or
+    // after a short timeout, so the caller can redirect without losing it.
+    let fired = false;
+    window.dlpTrackLeadConversion = function () {
+      if (fired) return Promise.resolve();
+      fired = true;
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
+      return new Promise(function (resolve) {
+        const done = setTimeout(resolve, 800);
+        try {
+          gtag('event', 'generate_lead', {
+            transport_type: 'beacon',
+            event_callback: function () { clearTimeout(done); resolve(); }
+          });
+        } catch (e) { clearTimeout(done); resolve(); }
+      });
+    };
+  })(window.DLP_TRACKING);
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Daniels' Legacy Planning – Protect Your Family's Future</title>
@@ -880,7 +932,8 @@
     This website is for informational purposes only and does not constitute a binding insurance offer.
     Coverage is subject to underwriting approval. Daniels' Legacy Planning is licensed to sell insurance products in Missouri and Oklahoma.
     Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company. Annuities may have surrender charges and other fees. DLP does not provide tax or legal advice; consult a qualified professional.
-    © 2025 Daniels' Legacy Planning. All rights reserved.
+    © <span id="footerYear"></span> Daniels' Legacy Planning. All rights reserved.
+    <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
   </div>
   <div class="disclaimer">
     <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
@@ -1221,6 +1274,12 @@ Respond in 2-3 sentences only. Be warm and personal.` }]
         callTime: formData.callTime || ''
       }));
     } catch (e) { /* sessionStorage may be disabled — safe to ignore */ }
+
+    // 4) Ad conversions (Meta "Lead" + Google "generate_lead") — only when
+    //    capture-lead confirmed the lead was saved.
+    if (leadOk && typeof window.dlpTrackLeadConversion === 'function') {
+      try { await window.dlpTrackLeadConversion(); } catch (e) { /* never block redirect */ }
+    }
 
     window.location.href = THANK_YOU_URL;
   }
