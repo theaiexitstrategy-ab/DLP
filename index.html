@@ -809,7 +809,12 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- TESTIMONIALS — DISABLED via SHOW_TESTIMONIALS = false (see script below).
+     Only re-enable with real clients who gave written permission to be quoted.
+     The section lives in an inert <template>, so nothing renders and no gap is
+     left between Products and the bottom CTA while the flag is off. -->
+<div id="testimonialsMount"></div>
+<template id="testimonialsTemplate">
 <section class="testimonials">
   <div class="testimonials-inner">
     <div class="section-eyebrow" style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;">Real Families. Real Results.</div>
@@ -836,6 +841,15 @@
     </div>
   </div>
 </section>
+</template>
+<script>
+  // Only re-enable with real clients who gave written permission to be quoted.
+  const SHOW_TESTIMONIALS = false;
+  if (SHOW_TESTIMONIALS) {
+    const tpl = document.getElementById('testimonialsTemplate');
+    document.getElementById('testimonialsMount').replaceWith(tpl.content.cloneNode(true));
+  }
+</script>
 
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
