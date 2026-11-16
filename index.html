@@ -882,6 +882,14 @@
      left between Products and the bottom CTA while the flag is off. -->
 <div id="testimonialsMount"></div>
 <template id="testimonialsTemplate">
+<section id="events" data-events-section style="display:none;padding:80px 24px;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div class="section-eyebrow" style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;">Join Us</div>
+    <h2 style="margin:0 0 28px;">Upcoming Events</h2>
+    <div data-goelev8-events="daniels-legacy-planning" data-title="" data-accent="var(--gold)" data-theme="light"></div>
+  </div>
+</section>
+
 <section class="testimonials">
   <div class="testimonials-inner">
     <div class="section-eyebrow" style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;">Real Families. Real Results.</div>
@@ -1286,5 +1294,14 @@ Respond in 2-3 sentences only. Be warm and personal.` }]
     window.location.href = THANK_YOU_URL;
   }
 </script>
+<!-- GoElev8 events: published from the portal (Bookings → Events).
+     The section stays hidden until there's at least one upcoming event. -->
+<script>
+  document.addEventListener('goelev8:events', function (e) {
+    var s = e.target.closest('[data-events-section]');
+    if (s && e.detail && e.detail.count) s.style.display = '';
+  });
+</script>
+<script src="https://portal.goelev8.ai/embed/events.js" async></script>
 </body>
 </html>
