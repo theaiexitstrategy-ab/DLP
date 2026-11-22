@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/lawton", "destination": "/lawton.html" },
+    { "source": "/stl", "destination": "/stl.html" }
+  ]
+}

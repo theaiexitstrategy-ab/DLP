@@ -1,0 +1,271 @@
+<!-- © 2026 GoElev8.ai | Aaron Bryant. All rights reserved. Unauthorized use prohibited. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BXLC9EZSYK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BXLC9EZSYK');
+</script>
+<!-- Conversion tracking scaffolding — same as index.html. While an ID still
+     starts with "TODO" its tag is not loaded. Conversions fire only from
+     dlpTrackLeadConversion(), after a successful form submission. -->
+<script>
+  window.DLP_TRACKING = {
+    META_PIXEL_ID: "TODO_META_PIXEL_ID",
+    GOOGLE_ADS_ID: "TODO_GOOGLE_ADS_ID"
+  };
+  (function (t) {
+    function isSet(id) { return id && id.indexOf("TODO") !== 0; }
+    if (isSet(t.GOOGLE_ADS_ID)) gtag('config', t.GOOGLE_ADS_ID);
+    if (isSet(t.META_PIXEL_ID)) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', t.META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+    let fired = false;
+    window.dlpTrackLeadConversion = function () {
+      if (fired) return Promise.resolve();
+      fired = true;
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
+      return new Promise(function (resolve) {
+        const done = setTimeout(resolve, 800);
+        try {
+          gtag('event', 'generate_lead', {
+            transport_type: 'beacon',
+            event_callback: function () { clearTimeout(done); resolve(); }
+          });
+        } catch (e) { clearTimeout(done); resolve(); }
+      });
+    };
+  })(window.DLP_TRACKING);
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Insurance in St. Louis, MO | Daniels' Legacy Planning</title>
+<meta name="description" content="Life insurance for St. Louis families: protect the house, cover final expenses, and leave a legacy. Free, no-obligation quote from a family-owned agency licensed in Missouri and Oklahoma.">
+<link rel="canonical" href="https://www.danielslegacyplanning.com/stl">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+
+<!-- Runtime config — same values as index.html. The anon key is Supabase's
+     public-facing key and is safe in client JS (protected by RLS). -->
+<script>
+  window.DLP_CONFIG = {
+    SUPABASE_URL: "https://bnkoqybkmwtrlorhowyv.supabase.co",
+    SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJua29xeWJrbXd0cmxvcmhvd3l2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MzUzODIsImV4cCI6MjA5MTAxMTM4Mn0.9_zS120_HF89HR4u_u48UOT2wgHKVHPg1W4sg4_h1mU",
+    CLIENT_SLUG: "daniels-legacy-planning",
+    PORTAL_URL: "https://portal.goelev8.ai",
+    THANK_YOU_URL: "thanks.html",
+    CAPTURE_LEAD_URL: "https://bnkoqybkmwtrlorhowyv.supabase.co/functions/v1/capture-lead"
+  };
+  // City page settings read by assets/quiz.js (state pre-select, market, tracking section).
+  window.DLP_PAGE = { market: "stl", state: "Missouri", section: "stl" };
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/"><img src="assets/logo.png" alt="Daniels' Legacy Planning" class="nav-logo" /></a>
+  <button type="button" class="nav-cta" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="stl">Legacy Check</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">✦ Serving St. Louis Families</div>
+      <h1>Protect the Home<br><em>You've Built in St. Louis</em></h1>
+      <p class="hero-sub">Life insurance that can help your family keep the house, cover final expenses, and pass on a legacy, from a family-owned agency licensed in Missouri.</p>
+      <div class="states-row">
+        <span class="state-pill">🏛 Missouri Licensed</span>
+        <span class="state-pill">🏛 Oklahoma Licensed</span>
+      </div>
+      <button type="button" class="hero-cta" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="stl">60-Second Legacy Check →</button>
+      <div class="hero-trust">
+        <div class="trust-item"><div class="trust-check">✓</div> Free quote, no obligation</div>
+        <div class="trust-item"><div class="trust-check">✓</div> Family-owned agency</div>
+        <div class="trust-item"><div class="trust-check">✓</div> Highly rated carriers</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo-wrap">
+        <img src="assets/daniels-family.png" alt="The Daniels Family" width="452" height="640" />
+        <div class="hero-photo-caption">
+          <strong>Anthony Daniels</strong>
+          <span>Licensed Insurance Professional · MO &amp; OK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="proof-strip">Family-Owned &nbsp;·&nbsp; Licensed in Missouri and Oklahoma &nbsp;·&nbsp; No-Pressure Promise</div>
+
+<!-- LOCAL INTRO -->
+<section class="city-section">
+  <div class="city-inner">
+    <div class="section-eyebrow" style="text-align:center;">For St. Louis Families</div>
+    <h2>What St. Louis Families Ask Us About</h2>
+    <p class="city-lead">From the city to the county, the families we talk with want the same things: to stay in the home they've worked for, to spare their loved ones a hard bill, and to leave something good behind. Caring for the people you've been blessed with is a beautiful kind of stewardship. <em>We're here to help you plan it with peace of mind.</em></p>
+    <div class="city-cards">
+      <div class="city-card">
+        <div class="product-icon">🏠</div>
+        <h3>Protecting the House</h3>
+        <p>Term life coverage can give your family money to help keep up with the mortgage if you pass away during the term, so they can stay in the home you made together.</p>
+      </div>
+      <div class="city-card">
+        <div class="product-icon">💛</div>
+        <h3>Final Expenses</h3>
+        <p>Final expense plans are smaller whole life policies designed to help cover funeral and end-of-life costs, so your family can grieve without the added worry.</p>
+      </div>
+      <div class="city-card">
+        <div class="product-icon">🌱</div>
+        <h3>A Legacy</h3>
+        <p>Whole life coverage can last your whole life as long as premiums are paid, and builds cash value over time: something lasting for your children and grandchildren.</p>
+      </div>
+    </div>
+    <div class="city-cta-row">
+      <button type="button" class="hero-cta" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="stl">60-Second Legacy Check →</button>
+    </div>
+    <p class="city-fine-print">Coverage is subject to underwriting approval. Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-eyebrow" style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;">Simple. Honest. No Pressure.</div>
+    <h2>How It Works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Take the Legacy Check</h4>
+        <p>A few quick questions about your family, your goals, and your budget. No Social Security number needed.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Get a Text From Us</h4>
+        <p>Reply YES and we'll give you a call at the time you picked to learn what matters most to your family.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Review Your Options</h4>
+        <p>A licensed DLP advisor goes over options from multiple highly rated carriers with you, at your pace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="city-section alt">
+  <div class="city-inner narrow">
+    <div class="section-eyebrow" style="text-align:center;">Questions From St. Louis Families</div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Can life insurance help my family keep the house?</summary>
+        <p>It can. If you pass away while the policy is in force, the benefit goes to the people you name, and they can use it toward the mortgage or anything else the family needs. We'll help you choose an amount and term that line up with your home loan and your budget.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What is final expense insurance?</summary>
+        <p>It's a smaller whole life policy meant to help cover funeral, burial and other end-of-life costs. It's often chosen by older adults, or by grown children planning with a parent.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the quote really free?</summary>
+        <p>Yes. The quote and the conversation about your options are free, and there's no obligation to buy anything. If you choose a policy, it has a premium, and coverage is subject to the insurance company's underwriting.</p>
+      </details>
+      <details class="faq-item">
+        <summary>We live on the Illinois side of the metro. Can you help?</summary>
+        <p>Not yet. We're licensed in Missouri and Oklahoma, so we can quote families in St. Louis City, St. Louis County and the rest of Missouri, but not Illinois residents right now.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What happens after I take the Legacy Check?</summary>
+        <p>You'll get a text from us. Reply YES and we'll call you at the time you picked. From there a licensed DLP advisor walks through your options with you. No pressure, and you decide what's right for your family.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — same #testimonialsTemplate and SHOW_TESTIMONIALS gate as
+     index.html, and OFF for the same reason. Only re-enable with real clients
+     who gave written permission to be quoted. -->
+<div id="testimonialsMount"></div>
+<template id="testimonialsTemplate">
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-eyebrow" style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;">Real Families. Real Results.</div>
+    <h2>What Our Clients Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"DLP found me a whole life policy my family could actually afford. They made the whole process easy. I finally feel like I'm doing the right thing for my kids."</p>
+        <div class="testi-author">Marcus T.</div>
+        <div class="testi-loc">Kansas City, MO</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I'd been putting off life insurance for years. The Daniels team was patient, knowledgeable, and genuinely cared about my family's future. Not just a sale."</p>
+        <div class="testi-author">Latasha R.</div>
+        <div class="testi-loc">Tulsa, OK</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The AI quiz matched me with the perfect final expense plan for my mom in minutes. She now has coverage and peace of mind. I can't thank DLP enough."</p>
+        <div class="testi-author">Demetrius W.</div>
+        <div class="testi-loc">St. Louis, MO</div>
+      </div>
+    </div>
+  </div>
+</section>
+</template>
+<script>
+  // Only re-enable with real clients who gave written permission to be quoted.
+  const SHOW_TESTIMONIALS = false;
+  if (SHOW_TESTIMONIALS) {
+    const tpl = document.getElementById('testimonialsTemplate');
+    document.getElementById('testimonialsMount').replaceWith(tpl.content.cloneNode(true));
+  }
+</script>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Whenever You're Ready, We're Here</h2>
+  <p>Take the 60-Second Legacy Check. It's free, there's no obligation, and you can go at your own pace.</p>
+  <button type="button" class="btn-dark" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="stl">60-Second Legacy Check →</button>
+</section>
+
+<!-- Shared quote quiz (markup + logic live in assets/quiz.js) -->
+<div id="quizModalMount"></div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/logo.png" alt="Daniels' Legacy Planning" style="height:50px;margin-bottom:12px;opacity:0.8;" />
+  <br>
+  <strong>Daniels' Legacy Planning</strong><br>
+  Licensed in Missouri and Oklahoma.<!-- [TODO: NPN / MO license # / OK license #] --><br>
+  <div class="disclaimer">
+    This website is for informational purposes only and does not constitute a binding insurance offer.
+    Coverage is subject to underwriting approval. Daniels' Legacy Planning is licensed to sell insurance products in Missouri and Oklahoma.
+    Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company. DLP does not provide tax or legal advice; consult a qualified professional.
+    © <span id="footerYear"></span> Daniels' Legacy Planning. All rights reserved.
+    <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
+  </div>
+  <div class="disclaimer">
+    <a href="/">Home</a> &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
+  </div>
+  <div class="site-credit">Site by <a href="https://goelev8.ai" target="_blank" rel="noopener">GoElev8.ai</a></div>
+</footer>
+
+<script src="assets/quiz.js"></script>
+</body>
+</html>
