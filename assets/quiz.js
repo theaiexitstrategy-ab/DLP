@@ -509,10 +509,9 @@ Respond in 2-3 sentences only. Be warm and personal.` }]
           email: formData.email,
           phone: formData.phone,
           source: 'dlp-website',
-          // TCPA consent record. NOTE: capture-lead (goelev8.ai-portal repo)
-          // currently whitelists insert fields and will DROP these until it
-          // is updated to persist them — see migration
-          // supabase/migrations/20261011_leads_tcpa_consent.sql.
+          // TCPA consent record. capture-lead (goelev8.ai-portal repo) saves
+          // these to leads.tcpa_consent / consent_text / consent_timestamp and
+          // stamps consent_received_at server-side (portal migration 0084).
           tcpa_consent: formData.tcpa_consent === true,
           consent_text: formData.consent_text || null,
           consent_timestamp: formData.consent_timestamp || null,
@@ -525,9 +524,9 @@ Respond in 2-3 sentences only. Be warm and personal.` }]
                  ' | Goal: ' + (formData.goal || '-') +
                  ' | Call time: ' + (formData.callTime || '-')
         };
-        // City pages: send market + UTM as top-level fields, and also append
-        // them to notes so they're kept on the lead row even while
-        // capture-lead still ignores fields it doesn't know about.
+        // City pages: send market + UTM as top-level fields (saved to
+        // leads.market / utm_* by capture-lead, portal migration 0084), and
+        // also append them to notes so they're readable in the Leads tab.
         if (ATTRIBUTION) {
           Object.assign(leadPayload, ATTRIBUTION);
           leadPayload.notes += ' | Market: ' + ATTRIBUTION.market +
