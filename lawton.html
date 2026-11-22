@@ -1,0 +1,302 @@
+<!-- © 2026 GoElev8.ai | Aaron Bryant. All rights reserved. Unauthorized use prohibited. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BXLC9EZSYK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-BXLC9EZSYK');
+</script>
+<!-- Conversion tracking scaffolding — same as index.html. While an ID still
+     starts with "TODO" its tag is not loaded. Conversions fire only from
+     dlpTrackLeadConversion(), after a successful form submission. -->
+<script>
+  window.DLP_TRACKING = {
+    META_PIXEL_ID: "TODO_META_PIXEL_ID",
+    GOOGLE_ADS_ID: "TODO_GOOGLE_ADS_ID"
+  };
+  (function (t) {
+    function isSet(id) { return id && id.indexOf("TODO") !== 0; }
+    if (isSet(t.GOOGLE_ADS_ID)) gtag('config', t.GOOGLE_ADS_ID);
+    if (isSet(t.META_PIXEL_ID)) {
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', t.META_PIXEL_ID);
+      fbq('track', 'PageView');
+    }
+    let fired = false;
+    window.dlpTrackLeadConversion = function () {
+      if (fired) return Promise.resolve();
+      fired = true;
+      if (typeof window.fbq === 'function') window.fbq('track', 'Lead');
+      return new Promise(function (resolve) {
+        const done = setTimeout(resolve, 800);
+        try {
+          gtag('event', 'generate_lead', {
+            transport_type: 'beacon',
+            event_callback: function () { clearTimeout(done); resolve(); }
+          });
+        } catch (e) { clearTimeout(done); resolve(); }
+      });
+    };
+  })(window.DLP_TRACKING);
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Life Insurance in Lawton, OK | Daniels' Legacy Planning</title>
+<meta name="description" content="Life insurance for Lawton, Fort Sill and Comanche County families. Free, no-obligation quote from a family-owned agency licensed in Oklahoma and Missouri.">
+<link rel="canonical" href="https://www.danielslegacyplanning.com/lawton">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+
+<!-- Runtime config — same values as index.html. The anon key is Supabase's
+     public-facing key and is safe in client JS (protected by RLS). -->
+<script>
+  window.DLP_CONFIG = {
+    SUPABASE_URL: "https://bnkoqybkmwtrlorhowyv.supabase.co",
+    SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJua29xeWJrbXd0cmxvcmhvd3l2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU0MzUzODIsImV4cCI6MjA5MTAxMTM4Mn0.9_zS120_HF89HR4u_u48UOT2wgHKVHPg1W4sg4_h1mU",
+    CLIENT_SLUG: "daniels-legacy-planning",
+    PORTAL_URL: "https://portal.goelev8.ai",
+    THANK_YOU_URL: "thanks.html",
+    CAPTURE_LEAD_URL: "https://bnkoqybkmwtrlorhowyv.supabase.co/functions/v1/capture-lead"
+  };
+  // City page settings read by assets/quiz.js (state pre-select, market, tracking section).
+  window.DLP_PAGE = { market: "lawton", state: "Oklahoma", section: "lawton" };
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/"><img src="assets/logo.png" alt="Daniels' Legacy Planning" class="nav-logo" /></a>
+  <button type="button" class="nav-cta" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="lawton">Legacy Check</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">✦ Lawton · Fort Sill · Comanche County</div>
+      <h1>A Legacy for Your Kids,<br><em>Right Here in Lawton</em></h1>
+      <p class="hero-sub">Whether you're serving at Fort Sill, finished your service and stayed, or raising your family in Comanche County, we'll help you find life insurance that fits your budget and the future you want for your children.</p>
+      <div class="states-row">
+        <span class="state-pill">🏛 Oklahoma Licensed</span>
+        <span class="state-pill">🏛 Missouri Licensed</span>
+      </div>
+      <button type="button" class="hero-cta" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="lawton">60-Second Legacy Check →</button>
+      <div class="hero-trust">
+        <div class="trust-item"><div class="trust-check">✓</div> Free quote, no obligation</div>
+        <div class="trust-item"><div class="trust-check">✓</div> Family-owned agency</div>
+        <div class="trust-item"><div class="trust-check">✓</div> Highly rated carriers</div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-photo-wrap">
+        <img src="assets/daniels-family.png" alt="The Daniels Family" width="452" height="640" />
+        <div class="hero-photo-caption">
+          <strong>Anthony Daniels</strong>
+          <span>Licensed Insurance Professional · MO &amp; OK</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="proof-strip">Family-Owned &nbsp;·&nbsp; Licensed in Missouri and Oklahoma &nbsp;·&nbsp; No-Pressure Promise</div>
+
+<!-- LOCAL INTRO -->
+<section class="city-section">
+  <div class="city-inner">
+    <div class="section-eyebrow" style="text-align:center;">For Lawton Families</div>
+    <h2>Planning Ahead Is an Act of Love</h2>
+    <p class="city-lead">The families we meet in Lawton work hard, serve their community, and want their children to have more than they did. Life insurance is one of the ways you can care for the people you've been blessed with, even after you're gone. <em>We'll walk you through it, one honest step at a time.</em></p>
+    <div class="city-cards">
+      <div class="city-card">
+        <div class="product-icon">👨‍👩‍👧</div>
+        <h3>A Legacy for Your Kids</h3>
+        <p>Coverage that can help pay for the everyday needs, the house, and your children's education if you're not there to provide them.</p>
+      </div>
+      <div class="city-card">
+        <div class="product-icon">🎖️</div>
+        <h3>Coverage Beyond Service</h3>
+        <p>Leaving the military or retiring nearby? We'll help you look at how your coverage could continue after you take off the uniform.</p>
+      </div>
+      <div class="city-card">
+        <div class="product-icon">💛</div>
+        <h3>Final Expenses</h3>
+        <p>Smaller plans designed to help cover funeral and end-of-life costs, so your family can focus on each other.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MILITARY FAMILIES / SGLI
+     Educational only. No Army, DoD or VA logos or seals, and no wording that
+     implies government endorsement. SGLI/VGLI facts below are summarized from
+     VA guidance; re-check va.gov/life-insurance before changing them. -->
+<section class="military-section" id="sgli">
+  <div class="city-inner">
+    <div class="section-eyebrow">For Military Families</div>
+    <h2>Already Have SGLI? Here's What Happens to It After You Leave the Service.</h2>
+    <p class="city-lead">Servicemembers' Group Life Insurance doesn't simply follow you into civilian life. Here's the general timeline, so you can make a calm, informed decision.</p>
+    <div class="city-cards">
+      <div class="city-card">
+        <span class="sgli-step">After separation</span>
+        <h3>SGLI Keeps Going for 120 Days</h3>
+        <p>Your SGLI coverage generally continues for 120 days after you separate, at no cost to you. After that, it ends unless you've made other arrangements.</p>
+      </div>
+      <div class="city-card">
+        <span class="sgli-step">Your options</span>
+        <h3>You Can Convert to VGLI</h3>
+        <p>Veterans' Group Life Insurance lets you keep coverage after service. If you apply within 240 days of separating, you generally won't need to answer health questions. You can still apply up to 1 year and 120 days after separating, but health questions may apply then.</p>
+      </div>
+      <div class="city-card">
+        <span class="sgli-step">Worth knowing</span>
+        <h3>VGLI Premiums Rise With Age</h3>
+        <p>VGLI rates are set by age group and increase as you get older. Many veterans like to see how VGLI compares with private coverage before choosing what's right for their family.</p>
+      </div>
+    </div>
+    <div class="city-cta-row">
+      <p class="city-lead" style="margin-bottom:20px;">Want a second set of eyes? We'll review your options side by side. The review is free, with no obligation.</p>
+      <button type="button" class="hero-cta" data-quiz-open data-quiz-label="Free SGLI Review" data-quiz-section="lawton">Get My Free Review →</button>
+    </div>
+    <p class="city-fine-print">Program details can change. Confirm current SGLI and VGLI rules at <a href="https://www.va.gov/life-insurance/" target="_blank" rel="noopener">va.gov/life-insurance</a>. Daniels' Legacy Planning is an independent insurance agency. We are not affiliated with or endorsed by the U.S. Army, the Department of Defense, or the Department of Veterans Affairs.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="section-eyebrow" style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;">Simple. Honest. No Pressure.</div>
+    <h2>How It Works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h4>Take the Legacy Check</h4>
+        <p>A few quick questions about your family, your goals, and your budget. No Social Security number needed.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h4>Get a Text From Us</h4>
+        <p>Reply YES and we'll give you a call at the time you picked to learn what matters most to your family.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h4>Review Your Options</h4>
+        <p>A licensed DLP advisor goes over options from multiple highly rated carriers with you, at your pace.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="city-section alt">
+  <div class="city-inner narrow">
+    <div class="section-eyebrow" style="text-align:center;">Questions From Lawton Families</div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Do you work with families at Fort Sill?</summary>
+        <p>Yes. We're licensed in Oklahoma and work with families in Lawton and across Comanche County, including active-duty, Guard, Reserve and veteran families. We're an independent, family-owned agency and are not affiliated with the Army or the Department of Defense.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the quote really free?</summary>
+        <p>Yes. The quote and the review of your options are free, and there's no obligation to buy anything. If you choose a policy, it has a premium, and coverage is subject to the insurance company's underwriting.</p>
+      </details>
+      <details class="faq-item">
+        <summary>We might PCS out of Oklahoma. What happens to our policy?</summary>
+        <p>Individual life insurance policies generally stay in force when you move, as long as premiums are paid. Check the terms of any specific policy. We're licensed in Oklahoma and Missouri, so we can quote you while you live in either state.</p>
+      </details>
+      <details class="faq-item">
+        <summary>We live across the Red River in Texas. Can you help?</summary>
+        <p>Not yet. We're licensed in Missouri and Oklahoma, so we can only quote people who live in those two states right now.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How much coverage does my family need?</summary>
+        <p>It depends on your income, debts, mortgage, and what you'd like to leave for your children. We'll help you think it through and show you options that fit your budget, without pushing you toward more than you need.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS — same #testimonialsTemplate and SHOW_TESTIMONIALS gate as
+     index.html, and OFF for the same reason. Only re-enable with real clients
+     who gave written permission to be quoted. -->
+<div id="testimonialsMount"></div>
+<template id="testimonialsTemplate">
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-eyebrow" style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;">Real Families. Real Results.</div>
+    <h2>What Our Clients Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"DLP found me a whole life policy my family could actually afford. They made the whole process easy. I finally feel like I'm doing the right thing for my kids."</p>
+        <div class="testi-author">Marcus T.</div>
+        <div class="testi-loc">Kansas City, MO</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I'd been putting off life insurance for years. The Daniels team was patient, knowledgeable, and genuinely cared about my family's future. Not just a sale."</p>
+        <div class="testi-author">Latasha R.</div>
+        <div class="testi-loc">Tulsa, OK</div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The AI quiz matched me with the perfect final expense plan for my mom in minutes. She now has coverage and peace of mind. I can't thank DLP enough."</p>
+        <div class="testi-author">Demetrius W.</div>
+        <div class="testi-loc">St. Louis, MO</div>
+      </div>
+    </div>
+  </div>
+</section>
+</template>
+<script>
+  // Only re-enable with real clients who gave written permission to be quoted.
+  const SHOW_TESTIMONIALS = false;
+  if (SHOW_TESTIMONIALS) {
+    const tpl = document.getElementById('testimonialsTemplate');
+    document.getElementById('testimonialsMount').replaceWith(tpl.content.cloneNode(true));
+  }
+</script>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <h2>Whenever You're Ready, We're Here</h2>
+  <p>Take the 60-Second Legacy Check. It's free, there's no obligation, and you can go at your own pace.</p>
+  <button type="button" class="btn-dark" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="lawton">60-Second Legacy Check →</button>
+</section>
+
+<!-- Shared quote quiz (markup + logic live in assets/quiz.js) -->
+<div id="quizModalMount"></div>
+
+<!-- FOOTER -->
+<footer>
+  <img src="assets/logo.png" alt="Daniels' Legacy Planning" style="height:50px;margin-bottom:12px;opacity:0.8;" />
+  <br>
+  <strong>Daniels' Legacy Planning</strong><br>
+  Licensed in Missouri and Oklahoma.<!-- [TODO: NPN / MO license # / OK license #] --><br>
+  <div class="disclaimer">
+    This website is for informational purposes only and does not constitute a binding insurance offer.
+    Coverage is subject to underwriting approval. Daniels' Legacy Planning is licensed to sell insurance products in Missouri and Oklahoma.
+    Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company. DLP does not provide tax or legal advice; consult a qualified professional.
+    Daniels' Legacy Planning is not affiliated with or endorsed by the U.S. Army, the Department of Defense, or the Department of Veterans Affairs.
+    © <span id="footerYear"></span> Daniels' Legacy Planning. All rights reserved.
+    <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
+  </div>
+  <div class="disclaimer">
+    <a href="/">Home</a> &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
+  </div>
+  <div class="site-credit">Site by <a href="https://goelev8.ai" target="_blank" rel="noopener">GoElev8.ai</a></div>
+</footer>
+
+<script src="assets/quiz.js"></script>
+</body>
+</html>
