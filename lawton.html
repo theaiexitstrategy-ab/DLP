@@ -49,11 +49,82 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life Insurance in Lawton, OK | Daniels' Legacy Planning</title>
-<meta name="description" content="Life insurance for Lawton, Fort Sill and Comanche County families. Free, no-obligation quote from a family-owned agency licensed in Oklahoma and Missouri.">
+<title>Lawton, OK Life Insurance Agent | Daniels' Legacy</title>
+<meta name="description" content="Independent agent serving Lawton, Fort Sill and Comanche County: final expense, mortgage protection and life insurance. Licensed in OK &amp; MO. Free quote.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "InsuranceAgency",
+      "@id": "https://www.danielslegacyplanning.com/#agency",
+      "name": "Daniels' Legacy Planning",
+      "url": "https://www.danielslegacyplanning.com/",
+      "logo": "https://www.danielslegacyplanning.com/assets/logo.png",
+      "image": "https://www.danielslegacyplanning.com/assets/daniels-family.png",
+      "telephone": "+1-314-363-4892",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lawton",
+        "addressRegion": "OK",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Anthony Daniels",
+        "jobTitle": "Licensed Insurance Agent"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Oklahoma"
+        },
+        {
+          "@type": "State",
+          "name": "Missouri"
+        },
+        {
+          "@type": "City",
+          "name": "Lawton, OK"
+        },
+        {
+          "@type": "City",
+          "name": "St. Louis, MO"
+        }
+      ],
+      "knowsAbout": [
+        "Final expense insurance",
+        "Mortgage protection insurance",
+        "Term life insurance",
+        "Whole life insurance",
+        "Annuities",
+        "Medicare"
+      ],
+      "description": "Family-owned, independent insurance agency licensed in Oklahoma and Missouri."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielslegacyplanning.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Lawton",
+          "item": "https://www.danielslegacyplanning.com/lawton"
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="canonical" href="https://www.danielslegacyplanning.com/lawton">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
 
 <!-- Runtime config — same values as index.html. The anon key is Supabase's
      public-facing key and is safe in client JS (protected by RLS). -->
@@ -67,14 +138,15 @@
     CAPTURE_LEAD_URL: "https://bnkoqybkmwtrlorhowyv.supabase.co/functions/v1/capture-lead"
   };
   // City page settings read by assets/quiz.js (state pre-select, market, tracking section).
-  window.DLP_PAGE = { market: "lawton", state: "Oklahoma", section: "lawton" };
+  window.DLP_PAGE = { market: "lawton", state: "Oklahoma", section: "city-lawton" };
 </script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="/"><img src="assets/logo.png" alt="Daniels' Legacy Planning" class="nav-logo" /></a>
+  <a href="/"><img src="/assets/logo.png" alt="Daniels' Legacy Planning" class="nav-logo" /></a>
+  <a class="nav-phone" href="tel:+13143634892">(314) 363-4892</a>
   <button type="button" class="nav-cta" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="lawton">Legacy Check</button>
 </nav>
 
@@ -137,6 +209,40 @@
   </div>
 </section>
 
+<!-- SERVICES + AREAS (links to the market product pages) -->
+<section class="city-section alt">
+  <div class="city-inner">
+    <div class="section-eyebrow" style="text-align:center;">Our Lawton Services</div>
+    <h2>How We Help Lawton-Area Families</h2>
+    <div class="city-cards">
+      <div class="city-card">
+        <div class="product-icon">💛</div>
+        <h3><a href="/lawton/final-expense-insurance">Final Expense Insurance</a></h3>
+        <p>Smaller whole life plans with simple applications, meant to cover funeral and end-of-life costs.</p>
+      </div>
+      <div class="city-card">
+        <div class="product-icon">🏠</div>
+        <h3><a href="/lawton/mortgage-protection-insurance">Mortgage Protection</a></h3>
+        <p>Life insurance sized to your mortgage and paid to your family, including homes bought with a VA loan.</p>
+      </div>
+      <div class="city-card">
+        <div class="product-icon">🎖️</div>
+        <h3><a href="/fort-sill-life-insurance">Leaving Fort Sill</a></h3>
+        <p>The SGLI-to-VGLI timeline in plain language, and how private coverage compares.</p>
+      </div>
+    </div>
+    <h2 style="margin-top:56px;">Areas We Serve</h2>
+    <p class="city-lead">Anthony is based in Lawton and works with families across southwest Oklahoma, by phone or in person around Lawton.</p>
+    <div class="area-list">
+      <p><strong>Comanche County:</strong> Lawton, Fort Sill, Cache, Elgin, Fletcher, Geronimo, Medicine Park, Indiahoma and Sterling.</p>
+      <p><strong>North and east:</strong> Anadarko, Apache and Chickasha.</p>
+      <p><strong>Stephens County:</strong> Duncan, Marlow and Comanche.</p>
+      <p><strong>South and west:</strong> Walters, Snyder, Frederick and Altus.</p>
+    </div>
+    <p class="city-fine-print">We're licensed in Oklahoma and Missouri, so we can't quote people who live in Texas.</p>
+  </div>
+</section>
+
 <!-- MILITARY FAMILIES / SGLI
      Educational only. No Army, DoD or VA logos or seals, and no wording that
      implies government endorsement. SGLI/VGLI facts below are summarized from
@@ -166,6 +272,7 @@
     <div class="city-cta-row">
       <p class="city-lead" style="margin-bottom:20px;">Want a second set of eyes? We'll review your options side by side. The review is free, with no obligation.</p>
       <button type="button" class="hero-cta" data-quiz-open data-quiz-label="Free SGLI Review" data-quiz-section="lawton">Get My Free Review →</button>
+      <p class="seo-links"><a href="/fort-sill-life-insurance">Read the full guide: VGLI vs private coverage →</a></p>
     </div>
     <p class="city-fine-print">Program details can change. Confirm current SGLI and VGLI rules at <a href="https://www.va.gov/life-insurance/" target="_blank" rel="noopener">va.gov/life-insurance</a>. Daniels' Legacy Planning is an independent insurance agency. We are not affiliated with or endorsed by the U.S. Army, the Department of Defense, or the Department of Veterans Affairs.</p>
   </div>
@@ -282,6 +389,7 @@
   <img src="assets/logo.png" alt="Daniels' Legacy Planning" style="height:50px;margin-bottom:12px;opacity:0.8;" />
   <br>
   <strong>Daniels' Legacy Planning</strong><br>
+  <a href="tel:+13143634892">(314) 363-4892</a><br>
   Licensed in Missouri and Oklahoma.<!-- [TODO: NPN / MO license # / OK license #] --><br>
   <div class="disclaimer">
     This website is for informational purposes only and does not constitute a binding insurance offer.
@@ -292,7 +400,7 @@
     <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
   </div>
   <div class="disclaimer">
-    <a href="/">Home</a> &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
+    <a href="/">Home</a> &nbsp;·&nbsp; <a href="/lawton">Lawton</a> &nbsp;·&nbsp; <a href="/stl">St. Louis</a> &nbsp;·&nbsp; <a href="/fort-sill-life-insurance">Fort Sill</a> &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
   </div>
   <div class="site-credit">Site by <a href="https://goelev8.ai" target="_blank" rel="noopener">GoElev8.ai</a></div>
 </footer>
