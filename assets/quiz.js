@@ -1,13 +1,19 @@
 // © 2026 GoElev8.ai | Aaron Bryant. All rights reserved. Unauthorized use prohibited.
 //
-// Shared quote quiz for index.html, lawton.html and stl.html.
+// Shared quote quiz for index.html, the city hubs (lawton.html, stl.html) and
+// the market product pages (lawton-*.html, stl-*.html, fort-sill-*.html).
+// Links in here are root-absolute because product pages live at nested URLs
+// (e.g. /lawton/final-expense-insurance).
 // Each page includes <div id="quizModalMount"></div> and loads this file at
 // the end of <body>. The quiz markup below is the single copy of the form
 // (formerly inline in index.html) and is mounted synchronously, before any
 // of the handlers further down look it up.
 //
 // City pages set window.DLP_PAGE before loading this file:
-//   { market: "lawton" | "stl", state: "Oklahoma" | "Missouri", section: "lawton" | "stl" }
+//   { market: "lawton" | "stl", state: "Oklahoma" | "Missouri", section: "city-lawton" | "city-stl" }
+// section must be "city-<market>": the portal's Lead Creator report counts
+// page views by that prefix. The page path goes in the view's label and in
+// the lead notes, so leads can be traced to the exact page.
 // index.html leaves it unset, so none of the city-only behavior runs there.
 
 const QUIZ_MODAL_HTML = `
@@ -151,8 +157,8 @@ const QUIZ_MODAL_HTML = `
         </div>
         <!-- /TCPA CONSENT -->
         <div class="consent-links">
-          <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> &nbsp;·&nbsp;
-          <a href="terms.html" target="_blank" rel="noopener">Terms</a>
+          <a href="/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> &nbsp;·&nbsp;
+          <a href="/terms.html" target="_blank" rel="noopener">Terms</a>
         </div>
         <button class="btn-primary" onclick="submitForm()">🔒 Submit — Get My Free Quote</button>
         <button class="btn-back" onclick="prevStep(3)">← Back</button>
@@ -161,7 +167,7 @@ const QUIZ_MODAL_HTML = `
              language. BEFORE any lead sharing starts, the TCPA consent text and the
              privacy policy must disclose it (attorney review). Leads collected
              before that disclosure should not be shared. -->
-        <p class="privacy-note">🔒 We respect your privacy. See our <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> for how your information is used.</p>
+        <p class="privacy-note">🔒 We respect your privacy. See our <a href="/privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> for how your information is used.</p>
       </div>
 
       <!-- SUCCESS -->
@@ -195,7 +201,7 @@ const QUIZ_MODAL_HTML = `
   // ---------------------------------------------------------------
   const DLP_CFG = window.DLP_CONFIG || {};
   const PORTAL_URL      = DLP_CFG.PORTAL_URL      || "https://portal.goelev8.ai";
-  const THANK_YOU_URL   = DLP_CFG.THANK_YOU_URL   || "thanks.html";
+  const THANK_YOU_URL   = DLP_CFG.THANK_YOU_URL   || "/thanks.html";
   const SB_URL          = DLP_CFG.SUPABASE_URL    || "";
   const SB_KEY          = DLP_CFG.SUPABASE_ANON_KEY || "";
   const CLIENT_SLUG     = DLP_CFG.CLIENT_SLUG     || "daniels-legacy-planning";
@@ -338,7 +344,7 @@ const QUIZ_MODAL_HTML = `
 
   document.addEventListener("DOMContentLoaded", function () {
     // City pages: one fire-and-forget page-view row (index.html unchanged).
-    if (DLP_PAGE.section) trackPortalClick("Page View", DLP_PAGE.section);
+    if (DLP_PAGE.section) trackPortalClick("Page View: " + window.location.pathname, DLP_PAGE.section);
 
     document.querySelectorAll("[data-portal-link]").forEach(function (el) {
       el.addEventListener("click", function () {
@@ -530,6 +536,7 @@ Respond in 2-3 sentences only. Be warm and personal.` }]
         if (ATTRIBUTION) {
           Object.assign(leadPayload, ATTRIBUTION);
           leadPayload.notes += ' | Market: ' + ATTRIBUTION.market +
+            ' | Page: ' + window.location.pathname +
             ' | UTM: ' + ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content']
               .map(function (k) { return k + '=' + (ATTRIBUTION[k] || '-'); }).join(', ');
         }

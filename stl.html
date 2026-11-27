@@ -49,11 +49,82 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Life Insurance in St. Louis, MO | Daniels' Legacy Planning</title>
-<meta name="description" content="Life insurance for St. Louis families: protect the house, cover final expenses, and leave a legacy. Free, no-obligation quote from a family-owned agency licensed in Missouri and Oklahoma.">
+<title>St. Louis, MO Life Insurance Agent | Daniels' Legacy</title>
+<meta name="description" content="Independent agent for St. Louis, St. Charles and Jefferson County families: final expense, mortgage protection and life insurance. Free quote.">
 <link rel="canonical" href="https://www.danielslegacyplanning.com/stl">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "InsuranceAgency",
+      "@id": "https://www.danielslegacyplanning.com/#agency",
+      "name": "Daniels' Legacy Planning",
+      "url": "https://www.danielslegacyplanning.com/",
+      "logo": "https://www.danielslegacyplanning.com/assets/logo.png",
+      "image": "https://www.danielslegacyplanning.com/assets/daniels-family.png",
+      "telephone": "+1-314-363-4892",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lawton",
+        "addressRegion": "OK",
+        "addressCountry": "US"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Anthony Daniels",
+        "jobTitle": "Licensed Insurance Agent"
+      },
+      "areaServed": [
+        {
+          "@type": "State",
+          "name": "Oklahoma"
+        },
+        {
+          "@type": "State",
+          "name": "Missouri"
+        },
+        {
+          "@type": "City",
+          "name": "Lawton, OK"
+        },
+        {
+          "@type": "City",
+          "name": "St. Louis, MO"
+        }
+      ],
+      "knowsAbout": [
+        "Final expense insurance",
+        "Mortgage protection insurance",
+        "Term life insurance",
+        "Whole life insurance",
+        "Annuities",
+        "Medicare"
+      ],
+      "description": "Family-owned, independent insurance agency licensed in Oklahoma and Missouri."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.danielslegacyplanning.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "St. Louis",
+          "item": "https://www.danielslegacyplanning.com/stl"
+        }
+      ]
+    }
+  ]
+}
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
+<link rel="stylesheet" href="/assets/site.css">
 
 <!-- Runtime config — same values as index.html. The anon key is Supabase's
      public-facing key and is safe in client JS (protected by RLS). -->
@@ -67,14 +138,15 @@
     CAPTURE_LEAD_URL: "https://bnkoqybkmwtrlorhowyv.supabase.co/functions/v1/capture-lead"
   };
   // City page settings read by assets/quiz.js (state pre-select, market, tracking section).
-  window.DLP_PAGE = { market: "stl", state: "Missouri", section: "stl" };
+  window.DLP_PAGE = { market: "stl", state: "Missouri", section: "city-stl" };
 </script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="/"><img src="assets/logo.png" alt="Daniels' Legacy Planning" class="nav-logo" /></a>
+  <a href="/"><img src="/assets/logo.png" alt="Daniels' Legacy Planning" class="nav-logo" /></a>
+  <a class="nav-phone" href="tel:+13143634892">(314) 363-4892</a>
   <button type="button" class="nav-cta" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="stl">Legacy Check</button>
 </nav>
 
@@ -138,6 +210,39 @@
       <button type="button" class="hero-cta" data-quiz-open data-quiz-label="60-Second Legacy Check" data-quiz-section="stl">60-Second Legacy Check →</button>
     </div>
     <p class="city-fine-print">Coverage is subject to underwriting approval. Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company.</p>
+  </div>
+</section>
+
+<!-- SERVICES + AREAS (links to the market product pages) -->
+<section class="city-section alt">
+  <div class="city-inner">
+    <div class="section-eyebrow" style="text-align:center;">Our St. Louis Services</div>
+    <h2>How We Help St. Louis-Area Families</h2>
+    <div class="city-cards">
+      <div class="city-card">
+        <div class="product-icon">💛</div>
+        <h3><a href="/stl/final-expense-insurance">Final Expense Insurance</a></h3>
+        <p>Smaller whole life plans with simple applications, meant to cover funeral and end-of-life costs.</p>
+      </div>
+      <div class="city-card">
+        <div class="product-icon">🏠</div>
+        <h3><a href="/stl/mortgage-protection-insurance">Mortgage Protection</a></h3>
+        <p>Life insurance sized to your mortgage and paid to your family, not the bank.</p>
+      </div>
+      <div class="city-card">
+        <div class="product-icon">🌱</div>
+        <h3>Whole and Term Life</h3>
+        <p>Coverage for young families and for leaving a legacy. Take the Legacy Check and we'll show you both.</p>
+      </div>
+    </div>
+    <h2 style="margin-top:56px;">Areas We Serve</h2>
+    <p class="city-lead">We work with families on the Missouri side of the metro, mostly by phone.</p>
+    <div class="area-list">
+      <p><strong>St. Louis City and St. Louis County:</strong> including Florissant, Hazelwood, Kirkwood, Chesterfield and South County.</p>
+      <p><strong>St. Charles County:</strong> St. Charles, St. Peters, O'Fallon and Wentzville.</p>
+      <p><strong>Jefferson, Franklin, Lincoln and Warren counties:</strong> including Arnold, Festus, Washington, Union, Troy and Warrenton.</p>
+    </div>
+    <p class="city-fine-print">We're licensed in Missouri and Oklahoma, so we can't quote people who live in Illinois.</p>
   </div>
 </section>
 
@@ -252,6 +357,7 @@
   <img src="assets/logo.png" alt="Daniels' Legacy Planning" style="height:50px;margin-bottom:12px;opacity:0.8;" />
   <br>
   <strong>Daniels' Legacy Planning</strong><br>
+  <a href="tel:+13143634892">(314) 363-4892</a><br>
   Licensed in Missouri and Oklahoma.<!-- [TODO: NPN / MO license # / OK license #] --><br>
   <div class="disclaimer">
     This website is for informational purposes only and does not constitute a binding insurance offer.
@@ -261,7 +367,7 @@
     <script>document.getElementById('footerYear').textContent = new Date().getFullYear();</script>
   </div>
   <div class="disclaimer">
-    <a href="/">Home</a> &nbsp;·&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
+    <a href="/">Home</a> &nbsp;·&nbsp; <a href="/lawton">Lawton</a> &nbsp;·&nbsp; <a href="/stl">St. Louis</a> &nbsp;·&nbsp; <a href="/fort-sill-life-insurance">Fort Sill</a> &nbsp;·&nbsp; <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="/terms.html">Terms</a>
   </div>
   <div class="site-credit">Site by <a href="https://goelev8.ai" target="_blank" rel="noopener">GoElev8.ai</a></div>
 </footer>

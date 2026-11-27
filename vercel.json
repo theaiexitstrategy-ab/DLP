@@ -1,6 +1,11 @@
 {
   "rewrites": [
     { "source": "/lawton", "destination": "/lawton.html" },
-    { "source": "/stl", "destination": "/stl.html" }
+    { "source": "/stl", "destination": "/stl.html" },
+    { "source": "/lawton/final-expense-insurance", "destination": "/lawton-final-expense-insurance.html" },
+    { "source": "/lawton/mortgage-protection-insurance", "destination": "/lawton-mortgage-protection-insurance.html" },
+    { "source": "/fort-sill-life-insurance", "destination": "/fort-sill-life-insurance.html" },
+    { "source": "/stl/final-expense-insurance", "destination": "/stl-final-expense-insurance.html" },
+    { "source": "/stl/mortgage-protection-insurance", "destination": "/stl-mortgage-protection-insurance.html" }
   ]
 }

@@ -1,0 +1,253 @@
+{
+  "generated": "2026-11-24",
+  "notes": "Demand is estimated (no Search Console or keyword-tool data). Items marked (verify) need Anthony, his upline or an official source before going live.",
+  "pages": [
+    {
+      "slug": "/lawton", "market": "lawton", "product": "general", "status": "update", "priority": 1,
+      "title": "Lawton, OK Life Insurance Agent | Daniels' Legacy",
+      "meta_description": "Independent agent serving Lawton, Fort Sill and Comanche County: final expense, mortgage protection, life, annuities and Medicare. Licensed in OK & MO.",
+      "h1": "Your Lawton Insurance Agent for Life, Final Expense and Medicare",
+      "target_queries": ["life insurance agent lawton ok", "insurance agent near me lawton", "independent insurance agent lawton"],
+      "outline": [
+        "Hero: who Anthony is, licensed in OK & MO, quote CTA",
+        "What we help with: one card per product, each linking to its page",
+        "Fort Sill families: short SGLI/VGLI note and a link to /fort-sill-life-insurance",
+        "Areas we serve: Comanche County (Lawton, Cache, Elgin, Fletcher, Geronimo, Medicine Park, Indiahoma, Sterling); Caddo/Grady (Anadarko, Apache, Chickasha); Stephens (Duncan, Marlow, Comanche); Tillman/Jackson/Cotton (Frederick, Altus, Snyder, Walters), each with real local detail, not just names",
+        "How a quote works: phone or in person, no obligation",
+        "FAQ",
+        "Quote form with TCPA consent"
+      ],
+      "faqs": ["Do you serve Duncan, Altus and Chickasha?", "Are you an independent agent or tied to one company?", "Can you help Fort Sill families?", "Do you charge for a quote?", "Do you meet in person?"],
+      "schema_types": ["InsuranceAgency", "FAQPage", "BreadcrumbList"], "disclaimers": ["annuity"]
+    },
+    {
+      "slug": "/stl", "market": "stl", "product": "general", "status": "update", "priority": 2,
+      "title": "St. Louis, MO Life Insurance Agent | Daniels' Legacy",
+      "meta_description": "Independent agent for St. Louis, St. Charles and Jefferson County families: final expense, mortgage protection, life, annuities and Medicare.",
+      "h1": "Your St. Louis Insurance Agent for Life, Final Expense and Medicare",
+      "target_queries": ["life insurance agent st louis", "independent life insurance agent st charles mo", "insurance agent near me st louis"],
+      "outline": [
+        "Hero and quote CTA",
+        "Products: one card per product, each linking to its page",
+        "Areas we serve: St. Louis City, St. Louis County, St. Charles, Jefferson, Franklin, Lincoln and Warren counties (Missouri only; we are not licensed in Illinois)",
+        "How a quote works",
+        "FAQ",
+        "Quote form"
+      ],
+      "faqs": ["Do you serve St. Charles and O'Fallon?", "Can you help if I live in Illinois?", "Are you independent?", "How long does a quote take?"],
+      "schema_types": ["InsuranceAgency", "FAQPage", "BreadcrumbList"], "disclaimers": ["annuity"]
+    },
+    {
+      "slug": "/lawton/final-expense-insurance", "market": "lawton", "product": "final_expense", "status": "new", "priority": 3,
+      "title": "Final Expense Insurance in Lawton, OK | Daniels' Legacy",
+      "meta_description": "Burial and final expense coverage for Lawton and Comanche County seniors. Simple applications, coverage that can't be reduced as you age. Free quote.",
+      "h1": "Final Expense Insurance for Lawton Families",
+      "target_queries": ["final expense insurance lawton ok", "burial insurance lawton", "funeral insurance comanche county"],
+      "outline": [
+        "What final expense covers: funeral, burial or cremation, final bills",
+        "Typical funeral costs in the Lawton area (real figures from local funeral homes, gathered by Anthony; verify)",
+        "Simplified vs guaranteed-issue (say 'guaranteed' only next to products that are guaranteed-issue)",
+        "Who it's for: ages 50–85, people on a fixed income",
+        "How a quote works",
+        "FAQ",
+        "Quote form"
+      ],
+      "faqs": ["How much does final expense insurance cost?", "Can I get coverage with health problems?", "Is there a waiting period?", "What's the difference between burial insurance and life insurance?"],
+      "schema_types": ["Service", "FAQPage", "BreadcrumbList"], "disclaimers": ["none"]
+    },
+    {
+      "slug": "/stl/final-expense-insurance", "market": "stl", "product": "final_expense", "status": "new", "priority": 4,
+      "title": "Final Expense Insurance in St. Louis, MO | Daniels' Legacy",
+      "meta_description": "Final expense and burial insurance for St. Louis, St. Charles and Jefferson County seniors. A local, independent agent. Free, no-obligation quote.",
+      "h1": "Final Expense Insurance for St. Louis Families",
+      "target_queries": ["final expense insurance st louis", "burial insurance st louis mo", "funeral insurance st charles"],
+      "outline": [
+        "What it covers",
+        "St. Louis-area funeral costs (local figures gathered by Anthony; verify)",
+        "Simplified vs guaranteed-issue",
+        "Who it's for",
+        "How a quote works",
+        "FAQ",
+        "Quote form"
+      ],
+      "faqs": ["How much does final expense insurance cost in Missouri?", "Can I get coverage with health problems?", "Is there a waiting period?", "Does it pay out quickly?"],
+      "schema_types": ["Service", "FAQPage", "BreadcrumbList"], "disclaimers": ["none"]
+    },
+    {
+      "slug": "/fort-sill-life-insurance", "market": "lawton", "product": "life", "status": "new", "priority": 5,
+      "title": "Life Insurance After Fort Sill: VGLI and Your Options",
+      "meta_description": "Leaving the Army at Fort Sill? A plain guide to the SGLI-to-VGLI timeline and how private life insurance compares. From a local, licensed agent.",
+      "h1": "Life Insurance When You Leave Fort Sill",
+      "target_queries": ["vgli vs private life insurance", "life insurance after leaving the army", "sgli to vgli fort sill"],
+      "outline": [
+        "The timeline (link to VA.gov for the official rules): SGLI continues free for 120 days; VGLI with no health questions if you apply within 240 days of separation; health questions apply after that, up to 1 year and 120 days",
+        "How private term or whole life differs: rates by age, coverage for spouse and children (neutral, no advice to drop VGLI)",
+        "A comparison checklist",
+        "Spouses and families",
+        "Talk it through with a local agent",
+        "Quote form"
+      ],
+      "faqs": ["Should I convert SGLI to VGLI?", "What happens to my life insurance when I leave the military?", "Can I have both VGLI and private coverage?", "Does my spouse's coverage end when I separate?"],
+      "schema_types": ["Article", "FAQPage", "BreadcrumbList"], "disclaimers": ["none"]
+    },
+    {
+      "slug": "/stl/mortgage-protection-insurance", "market": "stl", "product": "mortgage_protection", "status": "new", "priority": 6,
+      "title": "Mortgage Protection Insurance in St. Louis, MO",
+      "meta_description": "Keep your family in the house if something happens to you. Mortgage protection life insurance for St. Louis-area homeowners. Free quote.",
+      "h1": "Mortgage Protection for St. Louis Homeowners",
+      "target_queries": ["mortgage protection insurance st louis", "mortgage life insurance missouri", "life insurance for new homeowners st charles"],
+      "outline": [
+        "What it is: life insurance sized to your mortgage, paid to your family rather than the bank",
+        "How it compares with the lender's mortgage life offer",
+        "Living-benefit riders (only with real product backing; verify)",
+        "New homeowners in St. Charles County",
+        "How a quote works",
+        "FAQ",
+        "Quote form"
+      ],
+      "faqs": ["Is mortgage protection insurance worth it?", "What's the difference between PMI and mortgage protection?", "Does it pay the bank or my family?", "How much coverage do I need?"],
+      "schema_types": ["Service", "FAQPage", "BreadcrumbList"], "disclaimers": ["none"]
+    },
+    {
+      "slug": "/lawton/mortgage-protection-insurance", "market": "lawton", "product": "mortgage_protection", "status": "new", "priority": 7,
+      "title": "Mortgage Protection Insurance in Lawton, OK",
+      "meta_description": "Mortgage protection life insurance for Lawton and Fort Sill homeowners, including military families with a VA loan. Free, no-obligation quote.",
+      "h1": "Mortgage Protection for Lawton Homeowners",
+      "target_queries": ["mortgage protection insurance lawton ok", "mortgage life insurance oklahoma"],
+      "outline": [
+        "What it is",
+        "VA-loan homeowners and PCS moves (verify the angle with Anthony)",
+        "Compared with the lender's offer",
+        "How a quote works",
+        "FAQ",
+        "Quote form"
+      ],
+      "faqs": ["Is mortgage protection insurance worth it?", "Does it cover a VA loan?", "What if I PCS and sell the house?", "How much coverage do I need?"],
+      "schema_types": ["Service", "FAQPage", "BreadcrumbList"], "disclaimers": ["none"]
+    },
+    {
+      "slug": "/lawton/medicare", "market": "lawton", "product": "medicare", "status": "new", "priority": 8,
+      "title": "Medicare Help in Lawton, OK | Local Licensed Agent",
+      "meta_description": "Compare Medicare Supplement, Advantage and Part D options with a local licensed agent in Lawton. Not affiliated with the U.S. government.",
+      "h1": "Local Medicare Help in Lawton",
+      "target_queries": ["medicare agent lawton ok", "medicare supplement lawton", "medicare advantage comanche county"],
+      "outline": [
+        "TPMO disclaimer near the top",
+        "How Medicare enrollment periods work (Annual Enrollment Oct 15–Dec 7; Medicare Advantage Open Enrollment Jan 1–Mar 31; turning 65)",
+        "Supplement vs Advantage vs Part D, in plain terms",
+        "What to expect: a Scope of Appointment, then a review",
+        "Request a call (form = callback request only)"
+      ],
+      "faqs": ["When can I change my Medicare plan?", "What's the difference between Medigap and Medicare Advantage?", "Do I pay more to use an agent?", "What do I need for my appointment?"],
+      "schema_types": ["Service", "FAQPage", "BreadcrumbList"], "disclaimers": ["tpmo"]
+    },
+    {
+      "slug": "/stl/medicare", "market": "stl", "product": "medicare", "status": "new", "priority": 9,
+      "title": "Medicare Help in St. Louis, MO | Local Licensed Agent",
+      "meta_description": "Compare Medicare Supplement, Advantage and Part D options with a local licensed agent serving the Missouri side of St. Louis. Not government-affiliated.",
+      "h1": "Local Medicare Help in St. Louis",
+      "target_queries": ["medicare agent st louis", "medicare supplement st charles mo", "medicare advantage st louis county"],
+      "outline": [
+        "TPMO disclaimer near the top",
+        "How the enrollment periods work",
+        "Supplement vs Advantage vs Part D",
+        "What to expect",
+        "Request a call"
+      ],
+      "faqs": ["When can I change my Medicare plan?", "Medigap vs Medicare Advantage?", "Do I pay more to use an agent?", "Can I switch Medigap plans in Missouri?"],
+      "schema_types": ["Service", "FAQPage", "BreadcrumbList"], "disclaimers": ["tpmo"]
+    },
+    {
+      "slug": "/annuities", "market": "both", "product": "annuity", "status": "new", "priority": 10,
+      "title": "Annuities for Retirement Income | MO & OK",
+      "meta_description": "Fixed and fixed indexed annuities for steady retirement income, from an independent agent licensed in Missouri and Oklahoma. No tax or legal advice.",
+      "h1": "Annuities for Retirement Income",
+      "target_queries": ["fixed indexed annuity missouri", "retirement income annuity oklahoma", "annuity agent st louis"],
+      "outline": [
+        "What fixed and fixed indexed annuities do",
+        "Income for life and surrender charges, explained plainly",
+        "Who they suit and who they don't",
+        "Annuity disclosure",
+        "Request a call"
+      ],
+      "faqs": ["Is an annuity safe?", "What are surrender charges?", "Fixed vs indexed annuity?", "Can I roll over my 401(k)? (give no tax advice; suggest a tax professional)"],
+      "schema_types": ["Service", "FAQPage", "BreadcrumbList"], "disclaimers": ["annuity"]
+    }
+  ],
+  "technical": [
+    "Verify the site in Google Search Console (Domain property); submit sitemap.xml",
+    "Pick www or non-www and 301-redirect the other (canonicals already use www)",
+    "Add sitemap.xml and robots.txt",
+    "Add InsuranceAgency JSON-LD to every page (name, url, telephone, areaServed, knowsAbout)",
+    "Home page: canonical link and meta description",
+    "Same name and phone in every footer, matching the Business Profile",
+    "Every new page's form sends page_section to capture-lead"
+  ],
+  "gbp": {
+    "type": "service_area",
+    "primary_category": "Insurance agency",
+    "secondary_categories": ["Life insurance agency"],
+    "service_areas": ["Depends on Anthony's base; see strategy.md section 4 for both lists (max 20, within about 2 hours' drive)"],
+    "services": ["Final expense insurance", "Mortgage protection insurance", "Term life insurance", "Whole life insurance", "Fixed indexed annuities", "Fixed annuities", "Medicare Supplement", "Medicare Advantage", "Medicare Part D"],
+    "weekly_posts": [
+      {"week": 1, "topic": "Medicare Annual Enrollment ends Dec 7: book a review (TPMO disclaimer on the linked page)"},
+      {"week": 2, "topic": "What a funeral really costs locally, and how final expense covers it"},
+      {"week": 3, "topic": "Holiday family conversation: who would pay the mortgage?"},
+      {"week": 4, "topic": "Meet Anthony: licensed in OK & MO, how he works"},
+      {"week": 5, "topic": "New year checklist: life insurance, beneficiaries, mortgage protection"},
+      {"week": 6, "topic": "Medicare Advantage Open Enrollment (Jan 1–Mar 31): what you can change"},
+      {"week": 7, "topic": "Leaving Fort Sill? Your 240-day VGLI window"},
+      {"week": 8, "topic": "Final expense vs regular life insurance"},
+      {"week": 9, "topic": "New homeowners: mortgage protection in plain English"},
+      {"week": 10, "topic": "Retirement income: what an annuity can and can't do"},
+      {"week": 11, "topic": "Client story (real, with written permission) or a community event"},
+      {"week": 12, "topic": "Turning 65 this year? When to start on Medicare"}
+    ]
+  },
+  "citations": [
+    {"name": "Google Business Profile", "url": "https://business.google.com", "market": "both"},
+    {"name": "Bing Places", "url": "https://www.bingplaces.com", "market": "both"},
+    {"name": "Apple Business Connect", "url": "https://businessconnect.apple.com", "market": "both"},
+    {"name": "BBB", "url": "https://www.bbb.org", "market": "both"},
+    {"name": "Yelp", "url": "https://biz.yelp.com", "market": "both"},
+    {"name": "Facebook Page", "url": "https://www.facebook.com", "market": "both"},
+    {"name": "Medicare Agents Hub", "url": "https://medicareagentshub.com", "market": "both"},
+    {"name": "Insured Better", "url": "https://www.insuredbetter.com", "market": "both"},
+    {"name": "Lawton Fort Sill Chamber of Commerce", "url": "https://www.lawtonfortsillchamber.com", "market": "lawton"},
+    {"name": "St. Charles Regional Chamber (Missouri)", "url": "https://www.stcharlesregionalchamber.com", "market": "stl"}
+  ],
+  "content_calendar": [
+    {"week": 1, "title": "Medicare Annual Enrollment ends December 7: a last-week checklist", "target_query": "medicare open enrollment deadline", "links_to": "/lawton/medicare"},
+    {"week": 2, "title": "What a funeral costs in Comanche County in 2026", "target_query": "funeral cost lawton ok", "links_to": "/lawton/final-expense-insurance"},
+    {"week": 3, "title": "What a funeral costs in St. Louis in 2026", "target_query": "funeral cost st louis", "links_to": "/stl/final-expense-insurance"},
+    {"week": 4, "title": "Final expense vs burial vs pre-need: which is which?", "target_query": "final expense vs preneed", "links_to": "/stl/final-expense-insurance"},
+    {"week": 5, "title": "Mortgage protection vs PMI: they're not the same", "target_query": "mortgage protection vs pmi", "links_to": "/stl/mortgage-protection-insurance"},
+    {"week": 6, "title": "Leaving the Army? Your SGLI to VGLI timeline, step by step", "target_query": "sgli to vgli timeline", "links_to": "/fort-sill-life-insurance"},
+    {"week": 7, "title": "Medicare Advantage Open Enrollment: what you can and can't change by March 31", "target_query": "medicare advantage open enrollment", "links_to": "/stl/medicare"},
+    {"week": 8, "title": "Term vs whole life insurance, explained in 5 minutes", "target_query": "term vs whole life", "links_to": "/lawton"},
+    {"week": 9, "title": "How much life insurance does a family need?", "target_query": "how much life insurance do i need", "links_to": "/stl"},
+    {"week": 10, "title": "Fixed vs indexed annuities for retirement income", "target_query": "fixed vs indexed annuity", "links_to": "/annuities"},
+    {"week": 11, "title": "Buying a home with a VA loan near Fort Sill: protect it", "target_query": "va loan mortgage protection", "links_to": "/lawton/mortgage-protection-insurance"},
+    {"week": 12, "title": "What to have ready for a life insurance quote call", "target_query": "what do i need for a life insurance quote", "links_to": "/lawton"}
+  ],
+  "weekly_agent_tasks": [
+    "Pull Search Console queries and pages (last 28 days); flag searches at positions 8–20 and propose one page update per week",
+    "Draft the week's Business Profile post from the calendar, with a UTM link to the matching page",
+    "Draft the week's blog or guide post from the content calendar (Anthony approves before publishing)",
+    "Draft replies to new Google reviews (no plan or health details)",
+    "Run the compliance check on every draft: TPMO disclaimer on Medicare pages, annuity disclosure, no 'guaranteed' outside guaranteed-issue, no carrier names or prices, no Texas or Illinois targeting, correct spelling of Daniels' and Anthony",
+    "Weekly report in the Lead Creator tab: impressions, clicks, position and organic leads by page_section"
+  ],
+  "open_questions": [
+    "Which market does Anthony work from (Lawton or St. Louis)? Is there an office where clients visit, or is it home-based? This sets up the Business Profile.",
+    "Business phone number to show on the site and in listings",
+    "Does a Google Business Profile already exist? Who has access?",
+    "Who owns the domain or DNS, so we can verify Search Console?",
+    "For the Medicare TPMO disclaimer: how many Medicare organizations and plans does he represent in each area, and what exact wording has his upline (FMO) approved?",
+    "Is the testimonial on the home page from a real client, used with permission?",
+    "Real local funeral-cost figures (2–3 funeral homes per market) for the cost guides",
+    "Which carriers' products back 'guaranteed-issue' and living-benefit claims?",
+    "Does he want his license numbers shown on the site?",
+    "Is he comfortable with the Fort Sill/VGLI angle, and does he have military ties to mention?"
+  ]
+}
